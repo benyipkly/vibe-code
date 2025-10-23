@@ -1,0 +1,55 @@
+Of course. Here is a project description and a set of requirements for an educational Android app that demonstrates common vulnerabilities.
+
+Project Title: Vulnerable Android Playground (VAP)
+Project Description
+The Vulnerable Android Playground (VAP) is an educational, interactive mobile application designed for Android to demonstrate common security vulnerabilities and misconfigurations. Built with React Native and Expo, this app will serve as a safe, hands-on "capture the flag" style learning environment for developers, cybersecurity students, and penetration testers.
+
+Instead of just describing threats, VAP will contain several modules, each dedicated to a specific vulnerability. Within each module, users can interact with a feature that is intentionally flawed. The app will guide the user on how the vulnerability works, how it can be exploited (in a simulated context), and most importantly, provide clear explanations and code snippets illustrating the best practices for mitigation. The goal is to bridge the gap between theoretical security knowledge and practical implementation, enabling developers to write more secure code from the start.
+
+Key Objectives
+Educate: To provide a practical, hands-on educational tool for learning about Android and mobile application security.
+
+Demonstrate: To create interactive and easy-to-understand demonstrations of common vulnerabilities.
+
+Remediate: To offer clear, concise guidance and code examples on how to fix and prevent these security flaws.
+
+Promote Security Awareness: To encourage a "security-first" mindset among mobile developers.
+
+Project Requirements
+Functional Requirements
+Vulnerability Modules: The application must be structured into distinct modules, with each module dedicated to a specific vulnerability. Initial modules shall include:
+
+Insecure Data Storage: A login screen that saves user credentials (e.g., a fake password) in plain text to AsyncStorage. The app will explain how this data can be easily extracted from a rooted device.
+
+Hardcoded Secrets: A module that attempts to make a fake API call using an API key that is visibly hardcoded into the application's source code, demonstrating the risk of reverse engineering.
+
+Insecure Communication: A feature that allows the user to send data over both HTTP and HTTPS endpoints. An explanation will detail how traffic sent over HTTP can be intercepted in a Man-in-the-Middle (MitM) attack.
+
+Deep Link Exploitation: The app will register a custom deep link (e.g., vap://action?parameter=value) that performs a sensitive action without proper validation, showing how a malicious app could trigger it.
+
+WebView Injections (XSS): A screen containing a WebView that loads a page with a Cross-Site Scripting (XSS) vulnerability, allowing the user to execute a simple alert() command to demonstrate the flaw.
+
+Insecure Logging: A feature that intentionally writes sensitive information (like an email or session token) to the system logs (logcat), which can be read by other applications on the device.
+
+Educational Content: For each vulnerability module, the app must have three distinct sections:
+
+"The Problem": A clear explanation of the vulnerability and why it is a security risk.
+
+"The Attack": A step-by-step guide or interactive element showing how the vulnerability can be exploited in a simulated environment.
+
+"The Fix": A description of the secure coding practice or mitigation technique, complete with examples of "bad" vs. "good" code snippets.
+
+Navigation: The app must have a main dashboard or home screen that allows users to easily navigate to any of the vulnerability modules.
+
+Non-Functional Requirements
+Platform: The application must be developed for the Android operating system.
+
+Technology Stack: The project must be built using React Native with the Expo framework.
+
+User Interface (UI): The UI must be clean, intuitive, and focused on clarity. The primary goal is education, not complex design.
+
+Safety: All vulnerabilities must be simulated and self-contained within the app. The application must not introduce any actual security risks to the user's device. For example, network calls should be made to controlled endpoints, and file system interactions should be limited to the app's sandboxed data directory.
+
+Performance: The app should be lightweight and responsive, with minimal resource consumption.
+
+Extensibility: The project architecture should be modular to allow for easy addition of new vulnerability demonstrations in the future.
